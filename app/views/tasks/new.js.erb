@@ -1,0 +1,5 @@
+//This renders the form and slides it down so we can see it, the create form (other file) creates the page and slides it up
+$('#task-form').html("<%= j (render 'form') %>");
+$('#task-form').slideDown(350);
+
+<%= render 'datetimepicker' %>
