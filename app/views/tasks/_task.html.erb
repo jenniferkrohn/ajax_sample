@@ -1,9 +1,19 @@
 <div class="col-md-12">
 	<div class="well">
-		<h3><%=task.description %></h3>
-		<p><%= task.deadline.strftime('%B %d, %Y') %></p>
-		<p class="pull-right">
-	<%= link_to "Edit", edit_task_path(task), remote: true %>
+		<h3><%= task.description %></h3>
+		<p><%#= task.deadline.strftime('%B %d, %Y') %></p>
+<p class="pull-right">
+ <%= link_to edit_task_path(task), remote: true do %>
+ 	<i class="fa fa-pencil"></i>Edit
+ 	<% end %>
+
+
+<%= link_to task, remote: true, method: :delete, data: { confirm: 'Are you sure?' } do %>
+	<i class="fa fa-trash"></i>
+<% end %>
+		
+
+	<%#= link_to "Edit", edit_task_path(task), remote: true %>
 	<%= link_to "Delete", task, remote: true, method: :delete, data: { confirm: 'Are you sure?' } %>
 	</p>
 	</div>
